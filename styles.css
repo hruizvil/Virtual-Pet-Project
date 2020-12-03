@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div.container {
+    background: #EEE;
+    height: auto;
+    width: auto;
+  }
+  
+  div.left-column {
+    background: rgb(70,86,120);
+    float: left;
+    height: 100%;
+    width: 35%;
+  }
+  
+  div.right-column {
+    background: rgb(40,55,83);
+    height: 100%;
+  }
+
+  .tittle {
+      text-align: center;
+      margin-top: 30px;
+  }
+
+  #pet-name {
+      text-align: center;
+      margin-top: 30px;
+  }
+
+  #timer-text {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 45px;
+  }
+
+  h3 {
+    margin-top: 20px;
+  }
+
+  #game-start {
+    margin-top: 30px;
+  }
+
+  .label-container {
+    padding-left: 2em;
+  }
+
+  progress {
+    width: 80%;
+  }
+
+  #end-game-message {
+    position: relative;
+    top: 130px;
+    text-align: center;
+  }
+
+  .start-button {
+    position: relative;
+    width: 50%;
+    top: 20%;
+    left: 25%;
+    background-color: rgb(25, 41, 136);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .reset-button {
+    position: relative;
+    width: 50%;
+    top: 25%;
+    left: 25%; 
+    background-color: rgb(25, 41, 136);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .button {
+    position: relative;
+    top: 87%;
+    left: 25%;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .button:nth-child(1) {
+    background-color: #28B4D7; /* Green */
+  }
+
+  .button:nth-child(2) {
+    background-color: #1D721D; /* Green */
+  }
+
+  .button:nth-child(3) {
+    background-color: #db511b; /* Green */
+  }
+
+  .crying {
+    position: absolute;
+    top: 100px;
+    left: 52%;
+    width: 550px; 
+    height: 55%;
+    background: url(img/css_sprites2.png) no-repeat -10px -964px;
+    background-blend-mode: overlay;
+}
+
+.worried {
+    position: absolute;
+    top: 100px;
+    left: 56%;
+    width: 550px; 
+    height: 55%;
+    background: url(img/css_sprites2.png) no-repeat -10px -10px;
+    background-blend-mode: overlay;
+}
+
+.happy {
+  position: absolute;
+  top: 100px;
+  left: 56%;
+  width: 550px; 
+  height: 55%;
+  background: url(img/css_sprites2.png) no-repeat -10px -1916px;
+  background-blend-mode: overlay;
+}

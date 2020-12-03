@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Virtual Pet</title>
+
+</head>
+<body>
+
+    <div class="container"> 
+        <div class="left-column">
+            <h2 class="tittle"> Virtual Pet Simulation </h2>
+
+            <h2 id="pet-name"></h2>
+
+            <h2 id="timer-text"> 0 days old</h2>
+
+            <div class="label-container">
+                <label><h3>Health</h3></label>
+                <progress id="health-bar" value="100" max="100"></progress>
+
+                <label><h3>Hunger</h3></label>
+                <progress id="hunger-bar" value="1" max="100"></progress>
+
+                <label><h3>Happiness</h3></label>
+                <progress id="happiness-bar" value="100" max="100"></progress>
+            </div>
+
+            <h2 id="end-game-message"></h2>
+            
+            <button class="start-button" id="game-start">Start Game</button>
+            <button class="reset-button" id="game-reset" onclick="resetGame()">Reset Game</button>
+        </div>
+
+        <div id="sprite-feeling"></div>
+
+        <div class="right-column">
+            <button class="button" id="clean-button" onclick="clean()">Clean</button>
+            <button class="button" id="feed-button" onclick="feedPet()">Feed</button>
+            <button class="button" id="play-button" onclick="play()">Play</button>
+        </div>
+    </div>
+
+    <!-- 
+        This is the beginning of the Javascript Pet Functionality
+    -->
+
+    <script src="petInfo.js"></script>
+    <script src="gameControl.js"></script>
+    <script src="sprite_style.js"></script>
+    <script type="text/javascript">
+
+        const timerText = document.getElementById("timer-text");
+        const gameStart = document.getElementById("game-start");
+        const endGame = document.getElementById("end-game-message");
+
+        let petDays = 0;
+        let endGameMessage = "";
+        let intervalID;
+
+        gameStart.addEventListener("click", function() {
+            intervalID = setInterval(function () {
+                petDays += 1;
+                timerText.textContent = `${petDays} days old`;
+
+                // This returns a message with Game Ends or Null if not
+                endGameMessage = healthCheck(Pet["health"]);
+                if (Pet["health"] === 0) {
+                    endGame.textContent = endGameMessage;
+                    clearInterval(intervalID);
+                }
+
+                // Actions that happen to the pet every day 
+                everyPetDay();
+                checkSpriteFeeling();
+
+                // Displays health, hunger and happiness bars to user
+                displayInteractionBars();
+
+            }, 1000);
+        });
+
+    </script>
+</body>
+</html>
