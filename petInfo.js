@@ -10,8 +10,8 @@ var Pet = {
     }
 };
 
-let petName = document.getElementById("pet-name");
-petName.textContent = "Spike";
+// let petName = document.getElementById("pet-name");
+// petName.textContent = "Spike";
 
-// Pet["name"] = window.prompt("What is your name?");
-// document.getElementById("pet-name").textContent = Pet["name"];
+Pet["name"] = window.prompt("What is your name?");
+document.getElementById("pet-name").textContent = Pet["name"];
